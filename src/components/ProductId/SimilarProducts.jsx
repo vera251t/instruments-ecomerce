@@ -11,7 +11,7 @@ const SimilarProducts = ({ product }) => {
 
   useEffect(() => {
     if(product) {
-      getProductByCategory(`/products?categoryId=${product.category.id}`)
+      getProductByCategory(`/products?category=${product.category.id}`)
     }
   }, [product])
 

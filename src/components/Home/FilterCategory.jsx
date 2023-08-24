@@ -17,7 +17,7 @@ const FilterCategory = () => {
     const dispatch = useDispatch()
     const handleFilterCategory = (id) => {
         if(id) {
-            const url = `${baseUrl}/products?categoryId=${id}`
+            const url = `${baseUrl}/products?category=${id}`
             dispatch(getAllProductsThunk(url))
         } else {
             dispatch(getAllProductsThunk())
