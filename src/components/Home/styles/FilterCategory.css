@@ -1,0 +1,21 @@
+.category__container {
+    margin-top: 2.5rem;
+    padding: 10px;
+    height: 33%;
+}  
+.category__container h3 {
+    color: #333;
+    margin: 1rem 0;
+} 
+.category__container hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+} 
+.category__container ul {
+    padding: 0;
+}  
+.category__ul {
+    cursor: pointer;
+    padding: 5px;
+} 

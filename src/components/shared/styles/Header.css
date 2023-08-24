@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+}  
+.header__title {
+    font-size: 24px;
+}
+.header__title a {
+    text-decoration: none;
+    color: var(--color-red);
+}
+.header__ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.header__ul li a {
+    text-decoration: none;
+    color: gray;
+}
+@media (min-width: 700px) {
+    .header__title a {
+        font-size: 34px;
+    }
+    .header__ul {
+        gap: 5rem;
+    }
+    .header__ul li a {
+        font-size: 2rem;
+    }
+}

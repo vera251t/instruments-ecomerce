@@ -1,0 +1,57 @@
+.home__product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 80px;
+    justify-content: center;
+    margin: 5rem 0;
+}
+.home__input {
+    border: 1px solid gray;
+    width: 250px;
+    height: 30px;
+    margin-top: 4rem;
+    margin-left: 3.5rem;
+}
+.home__filter-btn {
+    background-color: transparent;
+    margin-left: 14.3rem;
+    margin-top: 1rem;
+    color: gray;
+    font-size: 1.2rem;
+}
+.home__aside {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.3s ease;
+}  
+.home__aside.open {
+    right: 0;
+}
+.home__title {
+    padding: 1rem;
+    color: #333;
+}
+.bxs-x-circle {
+    color: var(--color-red);
+    cursor: pointer;
+    font-size: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+@media (min-width: 700px) {
+    .home__input {
+        width: 700px;
+        height: 40px;
+        margin-left: 20rem;
+    }
+    .home__filter-btn {
+        margin-left: 60rem; 
+    }
+}

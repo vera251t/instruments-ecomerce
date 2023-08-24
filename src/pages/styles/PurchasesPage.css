@@ -1,0 +1,16 @@
+.purchases {
+    margin: 20px;
+    padding: 10px;
+}  
+.purchases h2 {
+    font-size: 24px;
+    color: #333;
+    padding: 1rem;
+}
+.purchases__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
