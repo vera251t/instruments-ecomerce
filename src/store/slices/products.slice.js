@@ -3,21 +3,32 @@ import axios from "axios";
 
 const productsSlice = createSlice({
     name: 'products',
-    initialState: null,
+    initialState: {
+        data: null,
+        isLoading: false,
+    },
     reducers: {
-        setProductsG: (state, action) => action.payload
+        setProductsG: (state, action) => {
+            state.data = action.payload
+            state.isLoading = false
+        },
+        setLoading: (state, action) => {
+            state.isLoading = action.payload
+        }
     }
 })
 
-export const { setProductsG } = productsSlice.actions
+export const { setProductsG, setLoading } = productsSlice.actions
 
 export default productsSlice.reducer
 
-//const defaultUrl = 'https://e-commerce-api-v2.academlo.tech/api/v1/products'
 const BASE_URL = import.meta.env.VITE_REACT_APP_URL
 const defaultUrl = `${BASE_URL}/products`
+
 export const getAllProductsThunk = (url = defaultUrl) => (dispatch) => {
+    dispatch(setLoading(true))
     axios.get(url)
         .then(res => dispatch(setProductsG(res.data)))
         .catch(err => console.log(err))
+        .finally(() => dispatch(setLoading(false)))
 }

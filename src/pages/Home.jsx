@@ -4,6 +4,7 @@ import './styles/Home.css'
 import { useState } from "react";
 import FilterCategory from "../components/Home/FilterCategory";
 import FilterPrice from "../components/Home/FilterPrice";
+import Loading from "./Loading";
 const Home = () => {
 
     const [isAsideOpen, setIsAsideOpen] = useState(false)
@@ -18,7 +19,7 @@ const Home = () => {
         min: 0,
         max: Infinity
     })
-    const products = useSelector(states => states.products)
+    const { data, isLoading } = useSelector(states => states.products)
 
     const [inputValue, setInputValue] = useState("")
     const handleSearchName = (e) => {
@@ -44,16 +45,20 @@ const Home = () => {
             <FilterPrice priceMinMax={priceMinMax} setPriceMinMax={setPriceMinMax}/>
             <FilterCategory />
         </aside>
-        <div className="home__product-container">
-            {
-                products?.filter(cbFilter).filter(cbFilterPrice).map(prod => (
-                    <CardProduct 
-                        key={prod.id}
-                        prod={prod}
-                    />
-                ))
-            }
-        </div>
+        {
+            isLoading
+                ?    <Loading />
+                :   <div className="home__product-container">
+                        {
+                            data?.filter(cbFilter).filter(cbFilterPrice).map(prod => (
+                                <CardProduct 
+                                    key={prod.id}
+                                    prod={prod}
+                                />
+                            ))
+                        }
+                    </div>
+        }
     </div>
   )
 }
