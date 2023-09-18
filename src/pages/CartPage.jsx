@@ -15,7 +15,7 @@ const CartPage = () => {
   const handlePurchase = () => {
     makePurchase()
   }
-
+  
   return (
     <div className='cart'>
         <h2>Cart</h2>

@@ -7,11 +7,17 @@
     animation: spin 1.2s linear infinite;
     position: fixed;
     top: 40%;
-    left: 50%;
+    left: 40%;
 }
 
 @keyframes spin {
     to {
         transform: rotate(360deg);
+    }
+}
+
+@media (min-width: 700px) {
+    .loading {
+        left: 50%;
     }
 }

@@ -11,7 +11,7 @@ const CartElement = ({ prod }) => {
   return (
     <article className="prod__cart">
         <header>
-            <img className="prod__img-cart" src={prod.product.images[0].url} alt="" />
+            <img className="prod__img-cart" src={prod.product.productImgs[0].url} alt="" />
         </header>
         <section className="prod__in">
             <h3>{prod.product.title}</h3>

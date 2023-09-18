@@ -35,20 +35,21 @@ const Home = () => {
     }
   return (
     <div>
-        <input className="home__input" value={inputValue} onChange={handleSearchName} type="text" placeholder="What are you looking for?"/>
-        <div>
-        <button className="home__filter-btn" onClick={toggleAside}><i className='bx bx-filter-alt'></i> Filters</button>
-        </div>
-        <aside className={`home__aside ${isAsideOpen ? 'open' : ''}`}>
-            <h3 className="home__title">Filters</h3>
-            <button onClick={closeAside}><i className='bx bxs-x-circle'></i></button>
-            <FilterPrice priceMinMax={priceMinMax} setPriceMinMax={setPriceMinMax}/>
-            <FilterCategory />
-        </aside>
         {
             isLoading
                 ?    <Loading />
-                :   <div className="home__product-container">
+                :   <>
+                    <input className="home__input" value={inputValue} onChange={handleSearchName} type="text" placeholder=" What are you looking for?"/>
+                    <div>
+                        <button className="home__filter-btn" onClick={toggleAside}><i className='bx bx-filter-alt'></i> Filters</button>
+                    </div>
+                    <aside className={`home__aside ${isAsideOpen ? 'open' : ''}`}>
+                        <h3 className="home__title">Filters</h3>
+                        <button onClick={closeAside}><i className='bx bxs-x-circle'></i></button>
+                        <FilterPrice priceMinMax={priceMinMax} setPriceMinMax={setPriceMinMax}/>
+                        <FilterCategory />
+                    </aside>
+                    <div className="home__product-container">
                         {
                             data?.filter(cbFilter).filter(cbFilterPrice).map(prod => (
                                 <CardProduct 
@@ -58,6 +59,7 @@ const Home = () => {
                             ))
                         }
                     </div>
+                    </>
         }
     </div>
   )

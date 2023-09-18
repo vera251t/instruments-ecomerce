@@ -18,7 +18,6 @@ export const { setCartG, addProductCartG, deletProductCartG } = cartSlice.action
 
 export default cartSlice.reducer
 
-//const baseUrl = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart'
 const BASE_URL = import.meta.env.VITE_REACT_APP_URL
 const baseUrl = `${BASE_URL}/cart`
 
